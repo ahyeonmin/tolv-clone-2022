@@ -114,14 +114,12 @@ header {
 }
 
 .gallery {
-    width: 100%;
-    height: 100vh;
     display: grid;
     grid-template-columns: repeat(4,1fr);
     grid-auto-rows: 45vh;
     gap: 3px;
     margin: 0;
-    padding: 0;
+    padding: 3px 0 3px 0;
 }
 
 .gallery__item {
@@ -142,11 +140,24 @@ header {
         visibility: hidden;
         position: absolute;
         z-index: 1;
-        top: 30px;
-        left: 30px;
+        top: 120px;
+        left: 100px;
+        font-weight: 300;
+        div:first-child {
+            font-weight: 600;
+            padding-bottom: 7px;
+        }
     }
     :hover {
         transition: all ease 0.5s 0s;
         opacity: 0.2;
+        ~ .gallery__text {
+            visibility: visible;
+        }
     }
+}
+
+footer {
+    height: 100vh;
+    background-color: $darkgray;
 }
